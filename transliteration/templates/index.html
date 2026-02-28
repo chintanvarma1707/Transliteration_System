@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transliteration System | Roman to Devanagari</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Transliteration System</h1>
+            <p>Seamlessly convert Roman script to Devanagari (Hindi/Sanskrit) in real-time.</p>
+        </header>
+
+        <main class="transliteration-card">
+            <div class="input-section">
+                <div class="section-header">
+                    <h2>Roman (English)</h2>
+                    <span class="badge">Input</span>
+                </div>
+                <textarea id="roman-input" placeholder="Type words like 'namaste', 'bharat'..."
+                    spellcheck="false"></textarea>
+                <div class="actions">
+                    <button id="clear-btn" class="btn-secondary" title="Clear text">
+                        <i data-lucide="trash-2"></i> Clear
+                    </button>
+                </div>
+            </div>
+
+            <div class="output-column">
+                <div class="output-section">
+                    <div class="section-header">
+                        <h2>Devanagari</h2>
+                        <span class="badge success">Output</span>
+                    </div>
+                    <div class="output-container">
+                        <div id="devanagari-output" class="output-text" placeholder="नमस्ते..."></div>
+                        <div class="actions">
+                            <button id="copy-btn" class="btn-primary" title="Copy to clipboard">
+                                <i data-lucide="copy" class="icon-copy"></i>
+                                <i data-lucide="check" class="icon-check hidden"></i>
+                                <span class="btn-text">Copy</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="output-section translation-section">
+                    <div class="section-header">
+                        x` <h2>Hindi Translation</h2>
+                        <span class="badge success">Output</span>
+                    </div>
+                    <div class="output-container">
+                        <div id="translation-output" class="output-text translation-text"
+                            placeholder="Hello... -> नमस्ते..."></div>
+                        <div class="actions">
+                            <button id="copy-translation-btn" class="btn-primary" title="Copy to clipboard">
+                                <i data-lucide="copy" class="icon-copy-trans"></i>
+                                <i data-lucide="check" class="icon-check-trans hidden"></i>
+                                <span class="btn-text-trans">Copy</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p> © 2026 Chintan Varma | All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
