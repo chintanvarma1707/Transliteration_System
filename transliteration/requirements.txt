@@ -1,2 +1,3 @@
 Flask==3.0.0
 indic-transliteration==2.3.54
+deep-translator==1.11.4
